@@ -5,7 +5,13 @@
     <title>AJAX Tutoiral</title>
     <script>
         function myFunction() {
-            document.getElementById("demo").innerHTML = "Paragraph changed.";
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "hello_world.txt", true);
+            xhttp.send();
+
+            xhttp.onreadystatechange = function() {
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            };
         }
     </script>
 </head>
