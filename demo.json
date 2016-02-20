@@ -1,0 +1,19 @@
+{
+  "systemX":15.310220556485934,
+  "systemY":45.840264901599085,
+  "systemZ":95.08857924053402,
+  "sectorX":20,
+  "sectorY":100,
+  "sectorZ":0,
+  "numberOfStars":1,
+  "habitable":false,
+  "life":false,
+  "systemName":"SYS-S99HO-120SYS-5537A",
+  "hasAsteroidBelt":false,
+  "starSystemID":"ee4ae6556838354df304f86ba8d04b54239a06ed",
+  "primaryType":"TYPE_STAR_M",
+  "starNames":[
+    "SG3SDE-120SACB63"
+  ],
+  "mainStarType":"TYPE_STAR_M"
+}
