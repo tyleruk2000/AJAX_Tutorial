@@ -6,11 +6,19 @@
     <script>
         function myFunction() {
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "hello_world.txt", true);
+            xhttp.open("GET", "demo.json", true);
             xhttp.send();
 
             xhttp.onreadystatechange = function() {
-                document.getElementById("demo").innerHTML = xhttp.responseText;
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var jsonObj = JSON.parse(xhttp.responseText);
+                    document.getElementById("line1").innerHTML = "<b>Name: </b>" + jsonObj.systemName;
+                    document.getElementById("line2").innerHTML = "<b>Number Of Stars: </b>" + jsonObj.numberOfStars;
+                    document.getElementById("line3").innerHTML = "<b>ID: </b>" + jsonObj.starSystemID;
+                    document.getElementById("line4").innerHTML = "<b>Primary Type: </b>" + jsonObj.primaryType;
+                    document.getElementById("line5").innerHTML = "<b>hasAsteroidBelt: </b>" + jsonObj.hasAsteroidBelt;
+                    document.getElementById("line6").innerHTML = "<b>habitable Planets: </b>" + jsonObj.habitable;
+                }
             };
         }
     </script>
@@ -18,7 +26,12 @@
 <body>
     <button type="button" onclick="myFunction()">Load</button>
 
-    <p id="demo">A Paragraph</p>
+    <p id="line1"></p>
+    <p id="line2"></p>
+    <p id="line3"></p>
+    <p id="line4"></p>
+    <p id="line5"></p>
+    <p id="line6"></p>
 
 </body>
 </html>
